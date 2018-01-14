@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8E27BFF3200A3512008656C0 /* AirQualityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BFF2200A3512008656C0 /* AirQualityCell.swift */; };
+		8E9923C5200C0A6700B1BDA7 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9923C4200C0A6700B1BDA7 /* MapCell.swift */; };
+		8E9923C7200C0E1300B1BDA7 /* SeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */; };
+		8EAFA38D200C04E8000BB4D4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAFA38C200C04E8000BB4D4 /* MapKit.framework */; };
 		8EB2A3E020054613001BEEF6 /* DecoderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB2A3DF20054613001BEEF6 /* DecoderUtils.swift */; };
 		8EBA27A1200A766F0068646E /* AirQualityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA27A0200A766F0068646E /* AirQualityViewController.swift */; };
 		8EBA27A3200A87C90068646E /* PM10ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA27A2200A87C90068646E /* PM10ViewCell.swift */; };
@@ -30,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		8E27BFF2200A3512008656C0 /* AirQualityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityCell.swift; sourceTree = "<group>"; };
+		8E9923C4200C0A6700B1BDA7 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
+		8EAFA38C200C04E8000BB4D4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8EB2A3DF20054613001BEEF6 /* DecoderUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderUtils.swift; sourceTree = "<group>"; };
 		8EBA27A0200A766F0068646E /* AirQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewController.swift; sourceTree = "<group>"; };
 		8EBA27A2200A87C90068646E /* PM10ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PM10ViewCell.swift; sourceTree = "<group>"; };
@@ -59,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EAFA38D200C04E8000BB4D4 /* MapKit.framework in Frameworks */,
 				B7B87ADF7A92A151C9DF3E2D /* Pods_AirQ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +76,7 @@
 		55E4D3470377682C904C16C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8EAFA38C200C04E8000BB4D4 /* MapKit.framework */,
 				95CE81513A9C9F2BA51A9A9F /* Pods_AirQ.framework */,
 			);
 			name = Frameworks;
@@ -96,6 +104,8 @@
 				8EEA693D200A8A3E00B9A484 /* PM25ViewCell.swift */,
 				8EEA6941200AB31300B9A484 /* NO2ViewCell.swift */,
 				8EEA6943200AB35900B9A484 /* SO2ViewCell.swift */,
+				8E9923C4200C0A6700B1BDA7 /* MapCell.swift */,
+				8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +197,11 @@
 					8EF43DEC20026E4A00000C37 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -286,11 +301,13 @@
 				8EBE5D1220049D10002BCD86 /* AirQualityModel.swift in Sources */,
 				8EBE5D0E20041B18002BCD86 /* SensorsListModel.swift in Sources */,
 				8EBA27A3200A87C90068646E /* PM10ViewCell.swift in Sources */,
+				8E9923C5200C0A6700B1BDA7 /* MapCell.swift in Sources */,
 				8EB2A3E020054613001BEEF6 /* DecoderUtils.swift in Sources */,
 				8EEA693E200A8A3F00B9A484 /* PM25ViewCell.swift in Sources */,
 				8EDC0475200825C700071E74 /* StationsListViewCell.swift in Sources */,
 				8EBE5D102004209A002BCD86 /* SensorDataModel.swift in Sources */,
 				8EEA6942200AB31300B9A484 /* NO2ViewCell.swift in Sources */,
+				8E9923C7200C0E1300B1BDA7 /* SeparatorCell.swift in Sources */,
 				8ECD93C8200BACE3009DD3C0 /* DataContainer.swift in Sources */,
 				8EEA6944200AB35900B9A484 /* SO2ViewCell.swift in Sources */,
 				8EBA27A1200A766F0068646E /* AirQualityViewController.swift in Sources */,

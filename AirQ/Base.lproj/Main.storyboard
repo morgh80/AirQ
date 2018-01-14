@@ -90,7 +90,7 @@
             <objects>
                 <tableViewController id="APO-sf-Is6" customClass="AirQualityViewController" customModule="AirQ" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ANk-ZP-GRD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -326,6 +326,48 @@
                                     <outlet property="so2Label" destination="G2c-It-fZg" id="lKt-qE-Rz0"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="separator" id="S8d-Pa-kun" userLabel="Separator" customClass="SeparatorCell" customModule="AirQ" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="248" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S8d-Pa-kun" id="Ljl-yi-Ekl">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kx-yC-cyp">
+                                            <rect key="frame" x="0.0" y="21" width="320" height="1"/>
+                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="Ai2-Rq-8Cu"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="8kx-yC-cyp" secondAttribute="trailing" id="j8X-tt-uvg"/>
+                                        <constraint firstItem="8kx-yC-cyp" firstAttribute="centerY" secondItem="Ljl-yi-Ekl" secondAttribute="centerY" id="pTQ-S0-fD7"/>
+                                        <constraint firstItem="8kx-yC-cyp" firstAttribute="leading" secondItem="Ljl-yi-Ekl" secondAttribute="leading" id="szW-xo-m8g"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="separatorLabel" destination="8kx-yC-cyp" id="edZ-00-8Jw"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="showMap" rowHeight="215" id="NJe-99-hN4" userLabel="Map" customClass="MapCell" customModule="AirQ" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="292" width="320" height="215"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NJe-99-hN4" id="8XM-v4-yhH">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="214.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ney-uD-zZd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </mapView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mapView" destination="ney-uD-zZd" id="gec-zC-7yr"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -334,6 +376,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="3eO-bv-Ln6"/>
+                    <size key="freeformSize" width="320" height="600"/>
                     <connections>
                         <outlet property="tableView" destination="ANk-ZP-GRD" id="ZnO-22-7kx"/>
                     </connections>
