@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E27BFF3200A3512008656C0 /* AirQualityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BFF2200A3512008656C0 /* AirQualityCell.swift */; };
+		8EB2A3E020054613001BEEF6 /* DecoderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB2A3DF20054613001BEEF6 /* DecoderUtils.swift */; };
+		8EBA27A1200A766F0068646E /* AirQualityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA27A0200A766F0068646E /* AirQualityViewController.swift */; };
+		8EBA27A3200A87C90068646E /* PM10ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA27A2200A87C90068646E /* PM10ViewCell.swift */; };
+		8EBE5D0C2003F72A002BCD86 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE5D0B2003F72A002BCD86 /* StationModel.swift */; };
+		8EBE5D0E20041B18002BCD86 /* SensorsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE5D0D20041B18002BCD86 /* SensorsListModel.swift */; };
+		8EBE5D102004209A002BCD86 /* SensorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE5D0F2004209A002BCD86 /* SensorDataModel.swift */; };
+		8EBE5D1220049D10002BCD86 /* AirQualityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE5D1120049D10002BCD86 /* AirQualityModel.swift */; };
+		8ECD93C8200BACE3009DD3C0 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD93C7200BACE3009DD3C0 /* DataContainer.swift */; };
+		8EDC0475200825C700071E74 /* StationsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC0474200825C700071E74 /* StationsListViewCell.swift */; };
+		8EEA693E200A8A3F00B9A484 /* PM25ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA693D200A8A3E00B9A484 /* PM25ViewCell.swift */; };
+		8EEA6942200AB31300B9A484 /* NO2ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA6941200AB31300B9A484 /* NO2ViewCell.swift */; };
+		8EEA6944200AB35900B9A484 /* SO2ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA6943200AB35900B9A484 /* SO2ViewCell.swift */; };
 		8EF43DF120026E4A00000C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF43DF020026E4A00000C37 /* AppDelegate.swift */; };
-		8EF43DF320026E4A00000C37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF43DF220026E4A00000C37 /* ViewController.swift */; };
+		8EF43DF320026E4A00000C37 /* StationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF43DF220026E4A00000C37 /* StationsListViewController.swift */; };
 		8EF43DF620026E4A00000C37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF43DF420026E4A00000C37 /* Main.storyboard */; };
 		8EF43DF820026E4A00000C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF43DF720026E4A00000C37 /* Assets.xcassets */; };
 		8EF43DFB20026E4A00000C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF43DF920026E4A00000C37 /* LaunchScreen.storyboard */; };
+		B7B87ADF7A92A151C9DF3E2D /* Pods_AirQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE81513A9C9F2BA51A9A9F /* Pods_AirQ.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E27BFF2200A3512008656C0 /* AirQualityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityCell.swift; sourceTree = "<group>"; };
+		8EB2A3DF20054613001BEEF6 /* DecoderUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderUtils.swift; sourceTree = "<group>"; };
+		8EBA27A0200A766F0068646E /* AirQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewController.swift; sourceTree = "<group>"; };
+		8EBA27A2200A87C90068646E /* PM10ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PM10ViewCell.swift; sourceTree = "<group>"; };
+		8EBE5D0B2003F72A002BCD86 /* StationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
+		8EBE5D0D20041B18002BCD86 /* SensorsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsListModel.swift; sourceTree = "<group>"; };
+		8EBE5D0F2004209A002BCD86 /* SensorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataModel.swift; sourceTree = "<group>"; };
+		8EBE5D1120049D10002BCD86 /* AirQualityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModel.swift; sourceTree = "<group>"; };
+		8ECD93C7200BACE3009DD3C0 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		8EDC0474200825C700071E74 /* StationsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsListViewCell.swift; sourceTree = "<group>"; };
+		8EEA693D200A8A3E00B9A484 /* PM25ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PM25ViewCell.swift; sourceTree = "<group>"; };
+		8EEA6941200AB31300B9A484 /* NO2ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NO2ViewCell.swift; sourceTree = "<group>"; };
+		8EEA6943200AB35900B9A484 /* SO2ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SO2ViewCell.swift; sourceTree = "<group>"; };
 		8EF43DED20026E4A00000C37 /* AirQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF43DF020026E4A00000C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8EF43DF220026E4A00000C37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8EF43DF220026E4A00000C37 /* StationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsListViewController.swift; sourceTree = "<group>"; };
 		8EF43DF520026E4A00000C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8EF43DF720026E4A00000C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EF43DFA20026E4A00000C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EF43DFC20026E4A00000C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95CE81513A9C9F2BA51A9A9F /* Pods_AirQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B920B6AE7FD108203B4DB13 /* Pods-AirQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirQ/Pods-AirQ.debug.xcconfig"; sourceTree = "<group>"; };
+		F9F1B953BEC5DF98E5DD365A /* Pods-AirQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirQ/Pods-AirQ.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B87ADF7A92A151C9DF3E2D /* Pods_AirQ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55E4D3470377682C904C16C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95CE81513A9C9F2BA51A9A9F /* Pods_AirQ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E7D681020029748002E307D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8EBE5D0B2003F72A002BCD86 /* StationModel.swift */,
+				8EBE5D0D20041B18002BCD86 /* SensorsListModel.swift */,
+				8EBE5D0F2004209A002BCD86 /* SensorDataModel.swift */,
+				8EBE5D1120049D10002BCD86 /* AirQualityModel.swift */,
+				8EB2A3DF20054613001BEEF6 /* DecoderUtils.swift */,
+				8ECD93C7200BACE3009DD3C0 /* DataContainer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8EEA693F200A8DC300B9A484 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC0474200825C700071E74 /* StationsListViewCell.swift */,
+				8E27BFF2200A3512008656C0 /* AirQualityCell.swift */,
+				8EBA27A2200A87C90068646E /* PM10ViewCell.swift */,
+				8EEA693D200A8A3E00B9A484 /* PM25ViewCell.swift */,
+				8EEA6941200AB31300B9A484 /* NO2ViewCell.swift */,
+				8EEA6943200AB35900B9A484 /* SO2ViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8EEA6940200A8DEA00B9A484 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8EF43DF220026E4A00000C37 /* StationsListViewController.swift */,
+				8EBA27A0200A766F0068646E /* AirQualityViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		8EF43DE420026E4A00000C37 = {
 			isa = PBXGroup;
 			children = (
 				8EF43DEF20026E4A00000C37 /* AirQ */,
 				8EF43DEE20026E4A00000C37 /* Products */,
+				E9E1540BE8953DE2F01A7CAF /* Pods */,
+				55E4D3470377682C904C16C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +130,25 @@
 		8EF43DEF20026E4A00000C37 /* AirQ */ = {
 			isa = PBXGroup;
 			children = (
-				8EF43DF020026E4A00000C37 /* AppDelegate.swift */,
-				8EF43DF220026E4A00000C37 /* ViewController.swift */,
 				8EF43DF420026E4A00000C37 /* Main.storyboard */,
+				8E7D681020029748002E307D /* Model */,
+				8EEA693F200A8DC300B9A484 /* View */,
+				8EEA6940200A8DEA00B9A484 /* Controller */,
+				8EF43DF020026E4A00000C37 /* AppDelegate.swift */,
 				8EF43DF720026E4A00000C37 /* Assets.xcassets */,
 				8EF43DF920026E4A00000C37 /* LaunchScreen.storyboard */,
 				8EF43DFC20026E4A00000C37 /* Info.plist */,
 			);
 			path = AirQ;
+			sourceTree = "<group>";
+		};
+		E9E1540BE8953DE2F01A7CAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B920B6AE7FD108203B4DB13 /* Pods-AirQ.debug.xcconfig */,
+				F9F1B953BEC5DF98E5DD365A /* Pods-AirQ.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EF43DFF20026E4A00000C37 /* Build configuration list for PBXNativeTarget "AirQ" */;
 			buildPhases = (
+				98B5AAED47336C8FA9AA451A /* [CP] Check Pods Manifest.lock */,
 				8EF43DE920026E4A00000C37 /* Sources */,
 				8EF43DEA20026E4A00000C37 /* Frameworks */,
 				8EF43DEB20026E4A00000C37 /* Resources */,
+				FD83B7AA599F4ADBE30F90A2 /* [CP] Embed Pods Frameworks */,
+				36E018695746421F5733EE9B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +221,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36E018695746421F5733EE9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirQ/Pods-AirQ-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98B5AAED47336C8FA9AA451A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirQ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD83B7AA599F4ADBE30F90A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AirQ/Pods-AirQ-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirQ/Pods-AirQ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8EF43DE920026E4A00000C37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EF43DF320026E4A00000C37 /* ViewController.swift in Sources */,
+				8E27BFF3200A3512008656C0 /* AirQualityCell.swift in Sources */,
+				8EF43DF320026E4A00000C37 /* StationsListViewController.swift in Sources */,
 				8EF43DF120026E4A00000C37 /* AppDelegate.swift in Sources */,
+				8EBE5D1220049D10002BCD86 /* AirQualityModel.swift in Sources */,
+				8EBE5D0E20041B18002BCD86 /* SensorsListModel.swift in Sources */,
+				8EBA27A3200A87C90068646E /* PM10ViewCell.swift in Sources */,
+				8EB2A3E020054613001BEEF6 /* DecoderUtils.swift in Sources */,
+				8EEA693E200A8A3F00B9A484 /* PM25ViewCell.swift in Sources */,
+				8EDC0475200825C700071E74 /* StationsListViewCell.swift in Sources */,
+				8EBE5D102004209A002BCD86 /* SensorDataModel.swift in Sources */,
+				8EEA6942200AB31300B9A484 /* NO2ViewCell.swift in Sources */,
+				8ECD93C8200BACE3009DD3C0 /* DataContainer.swift in Sources */,
+				8EEA6944200AB35900B9A484 /* SO2ViewCell.swift in Sources */,
+				8EBA27A1200A766F0068646E /* AirQualityViewController.swift in Sources */,
+				8EBE5D0C2003F72A002BCD86 /* StationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +429,7 @@
 		};
 		8EF43E0020026E4A00000C37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B920B6AE7FD108203B4DB13 /* Pods-AirQ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +445,7 @@
 		};
 		8EF43E0120026E4A00000C37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9F1B953BEC5DF98E5DD365A /* Pods-AirQ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
