@@ -93,7 +93,7 @@ struct AirQualityModel: Codable {
             so2IndexLevelName = try so2values?.decodeIfPresent(String.self, forKey: .indexLevelName)
             
         } catch {
-            print("Error decoding air quality values for: \(stationId)" ?? "Error: \(error.localizedDescription)")
+            print("Error decoding air quality values for: \(String(describing: stationId))")
         }
     }
 }
