@@ -11,8 +11,10 @@ import UIKit
 class PM10ViewCell: UITableViewCell {
 
     @IBOutlet weak var pm10Label: UILabel!
-    
     @IBOutlet weak var pm10DataLabel: UILabel!
+    
+    var isAvailable = true
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

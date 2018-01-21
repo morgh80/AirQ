@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class AirQualityViewController: UITableViewController {
     
@@ -14,6 +15,7 @@ class AirQualityViewController: UITableViewController {
     
     var station: StationModel!
     var airQualityData: AirQualityModel?
+    var airQualityDataColor: UIColor?
     var stationId: Int?
     var sensorsList: [SensorsListModel]?
     
@@ -21,17 +23,24 @@ class AirQualityViewController: UITableViewController {
     var pm25Data: Double?
     var no2Data: Double?
     var so2Data: Double?
-    
+        
+    var colorPicker = ColorPicker()
+    var location: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = station.cityName
         
         decoder.getStationAirQualityData(stationId: stationId!, completion: {
             data in
+            if let data = data {
             self.airQualityData = data
+            self.airQualityDataColor = self.colorPicker.calculateColorFor(airQuality: data)
             self.tableView.reloadData()
+            }
         })
         
         decoder.getSensorsListForStation(stationId: stationId!, completion: {
@@ -105,8 +114,6 @@ class AirQualityViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
-        
-        
     }
     
     // MARK: - Table view data source
@@ -125,6 +132,7 @@ class AirQualityViewController: UITableViewController {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "stIndexLevel", for: indexPath) as! AirQualityCell
             cell.airQualityLabel.text = airQualityData?.stIndexLevelName
+            cell.backgroundColor = airQualityDataColor
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "pm10IndexLevel", for: indexPath) as! PM10ViewCell
@@ -170,6 +178,7 @@ class AirQualityViewController: UITableViewController {
             cell.so2DataLabel.isHidden = true
             if airQualityData?.so2IndexLevelName != nil {
                 cell.so2Label.text = airQualityData?.so2IndexLevelName
+
             } else {
                 cell.so2Label.text = "-"
             }
@@ -183,10 +192,32 @@ class AirQualityViewController: UITableViewController {
             return cell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "showMap", for: indexPath) as! MapCell
+            if let latitude = station.gegrLat {
+                if let longtitude = station.gegrLon {
+                    location = CLLocation(latitude: Double(latitude)!, longitude: Double(longtitude)!)
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longtitude)!)
+                    
+                    let regionRadius: CLLocationDistance = 100000
+                    let coordinateRegion = MKCoordinateRegionMakeWithDistance((location?.coordinate)!,regionRadius, regionRadius)
+                    cell.mapView.setRegion(coordinateRegion, animated: true)
+                    
+                    cell.mapView.addAnnotation(annotation)
+                }
+            }
             return cell
         default:
             fatalError("Failed to initiate cell")
         }
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == 6 {
+            return 300.0
+        }
+        return 35.0
+    }
+
     
 }

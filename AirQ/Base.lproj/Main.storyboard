@@ -351,18 +351,23 @@
                                     <outlet property="separatorLabel" destination="8kx-yC-cyp" id="edZ-00-8Jw"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="showMap" rowHeight="215" id="NJe-99-hN4" userLabel="Map" customClass="MapCell" customModule="AirQ" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="292" width="320" height="215"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="showMap" rowHeight="200" id="NJe-99-hN4" userLabel="Map" customClass="MapCell" customModule="AirQ" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="292" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NJe-99-hN4" id="8XM-v4-yhH">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="214.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ney-uD-zZd">
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ney-uD-zZd">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </mapView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ney-uD-zZd" secondAttribute="bottom" constant="-25" id="6tn-gI-3ud"/>
+                                        <constraint firstItem="ney-uD-zZd" firstAttribute="top" secondItem="8XM-v4-yhH" secondAttribute="top" id="K0Z-HX-ktW"/>
+                                        <constraint firstItem="ney-uD-zZd" firstAttribute="leading" secondItem="8XM-v4-yhH" secondAttribute="leading" id="hMv-qx-otQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="ney-uD-zZd" secondAttribute="trailing" id="xaG-G3-ReU"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="mapView" destination="ney-uD-zZd" id="gec-zC-7yr"/>

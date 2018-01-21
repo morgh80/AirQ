@@ -70,8 +70,15 @@ class StationsListViewController: UIViewController, UITableViewDelegate, UITable
         if segue.identifier == "showStationDetails" {
             let destinationController = segue.destination as! AirQualityViewController
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                destinationController.station = self.stationsList[indexPath.row]
-                destinationController.stationId = self.stationsList[indexPath.row].stationId
+                let station: StationModel
+
+                if isFiltering() {
+                    station = filteredStations[indexPath.row]
+                } else {
+                    station = stationsList[indexPath.row]
+                }
+                destinationController.station = station
+                destinationController.stationId = station.stationId
             }
         }
     }
