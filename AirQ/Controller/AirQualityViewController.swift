@@ -12,24 +12,34 @@ import MapKit
 class AirQualityViewController: UITableViewController {
     
     let decoder = DecoderUtils()
+    let colorPicker = ColorCalculator()
     
     var station: StationModel!
-    var airQualityData: AirQualityModel?
-    var airQualityDataColor: UIColor?
     var stationId: Int?
     var sensorsList: [SensorsListModel]?
     
-    var pm10Data: Double?
-    var pm25Data: Double?
-    var no2Data: Double?
-    var so2Data: Double?
-        
-    var colorPicker = ColorPicker()
+    var airQualityData: AirQualityModel?
+    var airQualityColor: UIColor?
+    
+    var pm10data: Double?
+    var pm10color: UIColor?
+    
+    var pm25data: Double?
+    var pm25color: UIColor?
+    
+    var no2data: Double?
+    var no2color: UIColor?
+    
+    var so2data: Double?
+    var so2color: UIColor?
+    
     var location: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        self.tableView.separatorColor = UIColor.white
+        tableView.separatorInset = UIEdgeInsetsMake(0,0,0,0)
         
         navigationController?.navigationBar.prefersLargeTitles = true
         self.title = station.cityName
@@ -37,9 +47,13 @@ class AirQualityViewController: UITableViewController {
         decoder.getStationAirQualityData(stationId: stationId!, completion: {
             data in
             if let data = data {
-            self.airQualityData = data
-            self.airQualityDataColor = self.colorPicker.calculateColorFor(airQuality: data)
-            self.tableView.reloadData()
+                self.airQualityData = data
+                self.airQualityColor = self.colorPicker.calculateColorFor(parameter: AirParameters.airQuality ,with: data)
+                self.pm10color = self.colorPicker.calculateColorFor(parameter: AirParameters.pm10, with: data)
+                self.pm25color = self.colorPicker.calculateColorFor(parameter: AirParameters.pm25, with: data)
+                self.no2color = self.colorPicker.calculateColorFor(parameter: AirParameters.no2, with: data)
+                self.so2color = self.colorPicker.calculateColorFor(parameter: AirParameters.so2, with: data)
+                self.tableView.reloadData()
             }
         })
         
@@ -54,7 +68,7 @@ class AirQualityViewController: UITableViewController {
                         sensorData in
                         for value in (sensorData?.sensorValues)! {
                             if value.value != nil {
-                                self.pm10Data = value.value
+                                self.pm10data = value.value
                                 break
                             }
                         }
@@ -70,7 +84,7 @@ class AirQualityViewController: UITableViewController {
                         sensorData in
                         for value in (sensorData?.sensorValues)! {
                             if value.value != nil {
-                                self.pm25Data = value.value
+                                self.pm25data = value.value
                                 break
                             }
                         }
@@ -86,7 +100,7 @@ class AirQualityViewController: UITableViewController {
                         sensorData in
                         for value in (sensorData?.sensorValues)! {
                             if value.value != nil {
-                                self.no2Data = value.value
+                                self.no2data = value.value
                                 break
                             }
                         }
@@ -102,7 +116,7 @@ class AirQualityViewController: UITableViewController {
                         sensorData in
                         for value in (sensorData?.sensorValues)! {
                             if value.value != nil {
-                                self.so2Data = value.value
+                                self.so2data = value.value
                                 break
                             }
                         }
@@ -123,7 +137,7 @@ class AirQualityViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -132,65 +146,53 @@ class AirQualityViewController: UITableViewController {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "stIndexLevel", for: indexPath) as! AirQualityCell
             cell.airQualityLabel.text = airQualityData?.stIndexLevelName
-            cell.backgroundColor = airQualityDataColor
+            cell.backgroundColor = airQualityColor
+            cell.addBorderBottom(size: 1, color: UIColor.white)
+            let background = UIView()
+            cell.layer.insertSublayer(background.makeGradient(frame: cell.bounds), at: 0)
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "pm10IndexLevel", for: indexPath) as! PM10ViewCell
-            cell.pm10DataLabel.isHidden = true
             if airQualityData?.pm10IndexLevelName != nil {
-                cell.pm10Label.text = airQualityData?.pm10IndexLevelName
-            } else {
-                cell.pm10Label.text = "-"
+                cell.pm10DataLabel.text = airQualityData?.pm10IndexLevelName
             }
-            if pm10Data != nil {
-                cell.pm10DataLabel.isHidden = false
-                cell.pm10DataLabel.text = String(Int((pm10Data)!))
+            if pm10data != nil {
+                cell.pm10Label.text = "\(String(Int((pm10data)!))) (20)"
             }
+            cell.backgroundColor = pm10color
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "pm25IndexLevel", for: indexPath) as! PM25ViewCell
-            cell.pm25DataLabel.isHidden = true
             if airQualityData?.pm25IndexLevelName != nil {
-                cell.pm25Label.text = airQualityData?.pm25IndexLevelName
-            } else {
-                cell.pm25Label.text = "-"
+                cell.pm25DataLabel.text = airQualityData?.pm25IndexLevelName
             }
-            if pm25Data != nil {
-                cell.pm25DataLabel.isHidden = false
-                cell.pm25DataLabel.text = String(Int((pm25Data)!))
+            if pm25data != nil {
+                cell.pm25Label.text = "\(String(Int((pm25data)!))) (12)"
             }
+            cell.backgroundColor = pm25color
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "no2IndexLevel", for: indexPath) as! NO2ViewCell
-            cell.no2DataLabel.isHidden = true
             if airQualityData?.no2IndexLevelName != nil {
-                cell.no2Label.text = airQualityData?.no2IndexLevelName
-            } else {
-                cell.no2Label.text = "-"
+                cell.no2DataLabel.text = airQualityData?.no2IndexLevelName
             }
-            if no2Data != nil {
-                cell.no2DataLabel.isHidden = false
-                cell.no2DataLabel.text = String(Int((no2Data)!))
+            if no2data != nil {
+                cell.no2Label.text = "\(String(Int((no2data)!))) (40)"
             }
+            cell.backgroundColor = no2color
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "so2IndexLevel", for: indexPath) as! SO2ViewCell
-            cell.so2DataLabel.isHidden = true
             if airQualityData?.so2IndexLevelName != nil {
-                cell.so2Label.text = airQualityData?.so2IndexLevelName
-
-            } else {
-                cell.so2Label.text = "-"
+                cell.so2DataLabel.text = airQualityData?.so2IndexLevelName
             }
-            if so2Data != nil {
-                cell.so2DataLabel.isHidden = false
-                cell.so2DataLabel.text = String(Int((so2Data)!))
+            if so2data != nil {
+                cell.so2Label.text = "\(String(Int((so2data)!))) (50)"
             }
+            cell.backgroundColor = so2color
             return cell
         case 5:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "separator", for: indexPath) as! SeparatorCell
-            return cell
-        case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "showMap", for: indexPath) as! MapCell
             if let latitude = station.gegrLat {
                 if let longtitude = station.gegrLon {
@@ -212,12 +214,73 @@ class AirQualityViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 70.0
+        }
         
-        if indexPath.row == 6 {
+        if indexPath.row == 1 {
+            if self.pm10data == nil {
+                return 0
+            }
+        }
+        if indexPath.row == 2 {
+            if self.pm25data == nil {
+                return 0
+            }
+        }
+        if indexPath.row == 1 {
+            if self.pm10data == nil {
+                return 0
+            }
+        }
+        if indexPath.row == 3 {
+            if self.no2data == nil {
+                return 0
+            }
+        }
+        if indexPath.row == 4 {
+            if self.so2data == nil {
+                return 0
+            }
+        }
+        if indexPath.row == 5 {
             return 300.0
         }
-        return 35.0
+        return 50.0
     }
-
     
+}
+
+extension UIView {
+    func addBorderTop(size: CGFloat, color: UIColor) {
+        addBorderUtility(x: 0, y: 0, width: frame.width, height: size, color: color)
+    }
+    func addBorderBottom(size: CGFloat, color: UIColor) {
+        addBorderUtility(x: 0, y: frame.height - size, width: frame.width, height: size, color: color)
+    }
+    func addBorderLeft(size: CGFloat, color: UIColor) {
+        addBorderUtility(x: 0, y: 0, width: size, height: frame.height, color: color)
+    }
+    func addBorderRight(size: CGFloat, color: UIColor) {
+        addBorderUtility(x: frame.width - size, y: 0, width: size, height: frame.height, color: color)
+    }
+    private func addBorderUtility(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, color: UIColor) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: x, y: y, width: width, height: height)
+        layer.addSublayer(border)
+    }
+}
+
+extension UIView {
+    func makeGradient(frame:CGRect) -> CAGradientLayer {
+        let layer = CAGradientLayer()
+        layer.frame = frame
+        layer.startPoint = CGPoint(x: 0, y: 0)
+        layer.endPoint = CGPoint(x: 0, y: 1.0)
+        layer.colors = [
+            UIColor.clear.cgColor, UIColor.white.cgColor]
+        layer.opacity = 0.1
+        return layer
+}
 }
