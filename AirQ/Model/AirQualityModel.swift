@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AirQualityModel: Codable{
+struct AirQualityModel: Codable {
     
     var stationId : Int?
     var stCalcDate: String?

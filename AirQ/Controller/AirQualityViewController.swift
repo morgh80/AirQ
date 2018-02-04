@@ -12,7 +12,7 @@ import MapKit
 class AirQualityViewController: UITableViewController {
     
     let decoder = DecoderUtils()
-    let colorPicker = ColorCalculator()
+    let colorPicker = AirQualityColor()
     
     var station: StationModel!
     var stationId: Int?

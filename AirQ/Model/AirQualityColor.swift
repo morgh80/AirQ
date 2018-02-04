@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ColorCalculator {
+class AirQualityColor {
     
     let veryGood = #colorLiteral(red: 0.3059, green: 0.8588, blue: 0.0078, alpha: 1)
     let good = #colorLiteral(red: 0.8078, green: 0.9882, blue: 0.0078, alpha: 1)

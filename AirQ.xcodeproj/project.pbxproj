@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E1D070220114828009CB2A1 /* ColorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D070120114828009CB2A1 /* ColorCalculator.swift */; };
+		8E1D070220114828009CB2A1 /* AirQualityColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D070120114828009CB2A1 /* AirQualityColor.swift */; };
 		8E27BFF3200A3512008656C0 /* AirQualityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BFF2200A3512008656C0 /* AirQualityCell.swift */; };
+		8E64A8152023B2E300DAA1C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8142023B2E300DAA1C6 /* MapViewController.swift */; };
+		8E64A8172023B48400DAA1C6 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */; };
 		8E9923C5200C0A6700B1BDA7 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9923C4200C0A6700B1BDA7 /* MapCell.swift */; };
 		8E9923C7200C0E1300B1BDA7 /* SeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */; };
 		8E9E5E4A201520A5004A673E /* AirParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9E5E49201520A5004A673E /* AirParameters.swift */; };
@@ -29,16 +31,19 @@
 		8EF43DF620026E4A00000C37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF43DF420026E4A00000C37 /* Main.storyboard */; };
 		8EF43DF820026E4A00000C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF43DF720026E4A00000C37 /* Assets.xcassets */; };
 		8EF43DFB20026E4A00000C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF43DF920026E4A00000C37 /* LaunchScreen.storyboard */; };
-		B7B87ADF7A92A151C9DF3E2D /* Pods_AirQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE81513A9C9F2BA51A9A9F /* Pods_AirQ.framework */; };
+		B7B87ADF7A92A151C9DF3E2D /* Pods_AirQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE81513A9C9F2BA51A9A9F /* Pods_AirQ.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E1D070120114828009CB2A1 /* ColorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorCalculator.swift; path = AirQ/Model/ColorCalculator.swift; sourceTree = SOURCE_ROOT; };
+		8E1D070120114828009CB2A1 /* AirQualityColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AirQualityColor.swift; path = AirQ/Model/AirQualityColor.swift; sourceTree = SOURCE_ROOT; };
 		8E27BFF2200A3512008656C0 /* AirQualityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityCell.swift; sourceTree = "<group>"; };
+		8E64A8142023B2E300DAA1C6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Controller/FavoritesViewController.swift; sourceTree = "<group>"; };
 		8E9923C4200C0A6700B1BDA7 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
 		8E9E5E49201520A5004A673E /* AirParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirParameters.swift; sourceTree = "<group>"; };
 		8EAFA38C200C04E8000BB4D4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8EB15683202612E80045A93B /* WarsawGeoLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WarsawGeoLocation.gpx; sourceTree = "<group>"; };
 		8EB2A3DF20054613001BEEF6 /* DecoderUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderUtils.swift; sourceTree = "<group>"; };
 		8EBA27A0200A766F0068646E /* AirQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewController.swift; sourceTree = "<group>"; };
 		8EBA27A2200A87C90068646E /* PM10ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PM10ViewCell.swift; sourceTree = "<group>"; };
@@ -92,10 +97,18 @@
 				8EBE5D0F2004209A002BCD86 /* SensorDataModel.swift */,
 				8EBE5D1120049D10002BCD86 /* AirQualityModel.swift */,
 				8EB2A3DF20054613001BEEF6 /* DecoderUtils.swift */,
-				8E1D070120114828009CB2A1 /* ColorCalculator.swift */,
+				8E1D070120114828009CB2A1 /* AirQualityColor.swift */,
 				8E9E5E49201520A5004A673E /* AirParameters.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8EB156842026136E0045A93B /* SimulatorFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8EB15683202612E80045A93B /* WarsawGeoLocation.gpx */,
+			);
+			path = SimulatorFiles;
 			sourceTree = "<group>";
 		};
 		8EEA693F200A8DC300B9A484 /* View */ = {
@@ -118,6 +131,7 @@
 			children = (
 				8EF43DF220026E4A00000C37 /* StationsListViewController.swift */,
 				8EBA27A0200A766F0068646E /* AirQualityViewController.swift */,
+				8E64A8142023B2E300DAA1C6 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,7 +157,9 @@
 		8EF43DEF20026E4A00000C37 /* AirQ */ = {
 			isa = PBXGroup;
 			children = (
+				8EB156842026136E0045A93B /* SimulatorFiles */,
 				8EF43DF420026E4A00000C37 /* Main.storyboard */,
+				8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */,
 				8E7D681020029748002E307D /* Model */,
 				8EEA693F200A8DC300B9A484 /* View */,
 				8EEA6940200A8DEA00B9A484 /* Controller */,
@@ -305,6 +321,7 @@
 				8EBE5D1220049D10002BCD86 /* AirQualityModel.swift in Sources */,
 				8EBE5D0E20041B18002BCD86 /* SensorsListModel.swift in Sources */,
 				8EBA27A3200A87C90068646E /* PM10ViewCell.swift in Sources */,
+				8E64A8152023B2E300DAA1C6 /* MapViewController.swift in Sources */,
 				8E9923C5200C0A6700B1BDA7 /* MapCell.swift in Sources */,
 				8EB2A3E020054613001BEEF6 /* DecoderUtils.swift in Sources */,
 				8EEA693E200A8A3F00B9A484 /* PM25ViewCell.swift in Sources */,
@@ -312,9 +329,10 @@
 				8EBE5D102004209A002BCD86 /* SensorDataModel.swift in Sources */,
 				8EEA6942200AB31300B9A484 /* NO2ViewCell.swift in Sources */,
 				8E9923C7200C0E1300B1BDA7 /* SeparatorCell.swift in Sources */,
-				8E1D070220114828009CB2A1 /* ColorCalculator.swift in Sources */,
+				8E1D070220114828009CB2A1 /* AirQualityColor.swift in Sources */,
 				8EEA6944200AB35900B9A484 /* SO2ViewCell.swift in Sources */,
 				8EBA27A1200A766F0068646E /* AirQualityViewController.swift in Sources */,
+				8E64A8172023B48400DAA1C6 /* FavoritesViewController.swift in Sources */,
 				8EBE5D0C2003F72A002BCD86 /* StationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2.5;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -440,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -456,6 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RL98W5QV85;
 				INFOPLIST_FILE = AirQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.aeronaut.droidsonroids.AirQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -472,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RL98W5QV85;
 				INFOPLIST_FILE = AirQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.aeronaut.droidsonroids.AirQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";

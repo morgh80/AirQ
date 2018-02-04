@@ -23,7 +23,7 @@ class StationsListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+
         decoder.getStationsListWithDecoder(completion: {
             stations in
             self.stationsList = stations!
@@ -31,7 +31,7 @@ class StationsListViewController: UIViewController, UITableViewDelegate, UITable
             self.stationsList = self.stationsList
                 .filter { $0.cityName != nil }
                 .sorted { $0.cityName! < $1.cityName! }
-            
+
             self.tableView.reloadData()
         })
         
