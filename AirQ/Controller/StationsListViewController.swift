@@ -21,7 +21,6 @@ class StationsListViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
 
         decoder.getStationsListWithDecoder(completion: {
@@ -53,7 +52,6 @@ class StationsListViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Station", for: indexPath) as! StationsListViewCell
-        
         let station: StationModel
         if isFiltering() {
             station = filteredStations[indexPath.row]

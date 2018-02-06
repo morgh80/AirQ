@@ -38,7 +38,7 @@
 		8E1D070120114828009CB2A1 /* AirQualityColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AirQualityColor.swift; path = AirQ/Model/AirQualityColor.swift; sourceTree = SOURCE_ROOT; };
 		8E27BFF2200A3512008656C0 /* AirQualityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityCell.swift; sourceTree = "<group>"; };
 		8E64A8142023B2E300DAA1C6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Controller/FavoritesViewController.swift; sourceTree = "<group>"; };
+		8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8E9923C4200C0A6700B1BDA7 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
 		8E9E5E49201520A5004A673E /* AirParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirParameters.swift; sourceTree = "<group>"; };
@@ -129,6 +129,7 @@
 		8EEA6940200A8DEA00B9A484 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */,
 				8EF43DF220026E4A00000C37 /* StationsListViewController.swift */,
 				8EBA27A0200A766F0068646E /* AirQualityViewController.swift */,
 				8E64A8142023B2E300DAA1C6 /* MapViewController.swift */,
@@ -159,7 +160,6 @@
 			children = (
 				8EB156842026136E0045A93B /* SimulatorFiles */,
 				8EF43DF420026E4A00000C37 /* Main.storyboard */,
-				8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */,
 				8E7D681020029748002E307D /* Model */,
 				8EEA693F200A8DC300B9A484 /* View */,
 				8EEA6940200A8DEA00B9A484 /* Controller */,

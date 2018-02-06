@@ -12,21 +12,23 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var zoomButton: UIButton!
+    
     let decoder = DecoderUtils()
     let colorPicker = AirQualityColor()
-    var stationsList = [StationModel]()
     let locationManager = CLLocationManager()
+    
+    var stationsList = [StationModel]()
     var location: CLLocation?
-    @IBOutlet weak var zoomButton: UIButton!
     
     @IBAction func zoomToCurrentLocation(_ sender: UIButton) {
         var region = MKCoordinateRegion()
         region.span = MKCoordinateSpanMake(0.7, 0.7)
-                if let center = location?.coordinate  {
-                    region.center = center
-                    mapView.setRegion(region, animated: true)
-                    print(center)
-                }
+        if let center = location?.coordinate  {
+            region.center = center
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     override func viewDidLoad() {
@@ -37,6 +39,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
+        spinner.activityIndicatorViewStyle = .whiteLarge
+        self.spinner.startAnimating()
+        
         decoder.getStationsListWithDecoder(completion: {
             stations in
             self.stationsList = stations!
@@ -45,26 +50,32 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     if let longtitude = station.gegrLon {
                         let annotation = AirQualityPointAnnotation()
                         annotation.coordinate = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longtitude)!)
+                        annotation.title = station.stationName
                         self.decoder.getStationAirQualityData(stationId: station.stationId!, completion: {
                             data in
                             if let data = data {
                                 annotation.color = self.colorPicker.calculateColorFor(parameter: AirParameters.airQuality ,with: data)
+                                annotation.stationId = station.stationId
+                                annotation.station = station
                             }
                             self.mapView.addAnnotation(annotation)
+                            if station.stationId == stations?.last?.stationId {
+                                self.spinner.stopAnimating()
+                                self.spinner.hidesWhenStopped = true
+                            }
                         })
                     }
                 }
             }
-            print(3)
         })
         
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?     {
         let identifier = "station"
-        var annotationView: MKMarkerAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? AirQualityAnnotationView
         if annotationView == nil {
-            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = AirQualityAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         }
         if let annotation = annotation as? AirQualityPointAnnotation {
             mapView.reloadInputViews()
@@ -72,7 +83,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 annotationView?.isHidden = true
             }
             annotationView?.markerTintColor = annotation.color
-            annotationView?.glyphText = annotation.title
+            annotationView?.glyphText = ""
+            annotationView?.animatesWhenAdded = true
+            annotationView?.canShowCallout = true
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .infoDark)
+            annotationView?.stationId = annotation.stationId
+            annotationView?.station = annotation.station
         }
         return annotationView
     }
@@ -86,33 +102,44 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.locationManager.stopUpdatingLocation()
     }
     
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        if control == view.rightCalloutAccessoryView {
+//            performSegue(withIdentifier: "showStationDetailsFromMap", sender: view)
+//        }
+//    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+                    performSegue(withIdentifier: "showStationDetailsFromMap", sender: view)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationController = segue.destination as? AirQualityViewController {
+            destinationController.station = (sender as! AirQualityAnnotationView).station
+            destinationController.stationId = (sender as! AirQualityAnnotationView).stationId
+        }
+    }
     
 }
 
-class  AirQualityPointAnnotation: MKPointAnnotation {
+class AirQualityPointAnnotation: MKPointAnnotation {
     var color: UIColor?
+    var stationId: Int?
+    var station: StationModel?
+}
+
+class AirQualityAnnotationView: MKMarkerAnnotationView {
+    var stationId: Int?
+    var station: StationModel?
 }
 
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print (1)
         self.location = locations.last
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-        print(2)
-        let defaultLocation = CLLocation(latitude: 42.2296834, longitude: 21.012318800000003)
+        let defaultLocation = CLLocation(latitude: 52.2296834, longitude: 21.012318800000003)
         let regionRadius: CLLocationDistance = 1000000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance((defaultLocation.coordinate), regionRadius, regionRadius)
         self.mapView.setRegion(coordinateRegion, animated: true)
