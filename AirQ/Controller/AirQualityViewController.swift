@@ -44,7 +44,7 @@ class AirQualityViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         self.title = station.cityName
         
-        decoder.getStationAirQualityData(stationId: stationId!, completion: {
+        decoder.getStationAirQualityData(stationId: stationId!, completion: { [unowned self]
             data in
             if let data = data {
                 self.airQualityData = data
@@ -57,7 +57,7 @@ class AirQualityViewController: UITableViewController {
             }
         })
         
-        decoder.getSensorsListForStation(stationId: stationId!, completion: {
+        decoder.getSensorsListForStation(stationId: stationId!, completion: { [unowned self]
             sensor in
             self.sensorsList = sensor
             
@@ -80,7 +80,7 @@ class AirQualityViewController: UITableViewController {
             if let pm25sensor = self.sensorsList?
                 .filter({ $0.paramCode == "PM2.5" }) {
                 if pm25sensor.count != 0 {
-                    self.decoder.getDataForSensor(sensorId: (pm25sensor.first?.sensorId)!, completion: {
+                    self.decoder.getDataForSensor(sensorId: (pm25sensor.first?.sensorId)!, completion: { [unowned self]
                         sensorData in
                         for value in (sensorData?.sensorValues)! {
                             if value.value != nil {
@@ -96,7 +96,7 @@ class AirQualityViewController: UITableViewController {
             if let no2sensor = self.sensorsList?
                 .filter({ $0.paramCode == "NO2" }) {
                 if no2sensor.count != 0 {
-                    self.decoder.getDataForSensor(sensorId: (no2sensor.first?.sensorId)!, completion: {
+                    self.decoder.getDataForSensor(sensorId: (no2sensor.first?.sensorId)!, completion: { [unowned self]
                         sensorData in
                         for value in (sensorData?.sensorValues)! {
                             if value.value != nil {
@@ -112,7 +112,7 @@ class AirQualityViewController: UITableViewController {
             if let so2sensor = self.sensorsList?
                 .filter({ $0.paramCode == "SO2" }) {
                 if so2sensor.count != 0 {
-                    self.decoder.getDataForSensor(sensorId: (so2sensor.first?.sensorId)!, completion: {
+                    self.decoder.getDataForSensor(sensorId: (so2sensor.first?.sensorId)!, completion: { [unowned self]
                         sensorData in
                         for value in (sensorData?.sensorValues)! {
                             if value.value != nil {
@@ -148,8 +148,8 @@ class AirQualityViewController: UITableViewController {
             cell.airQualityLabel.text = airQualityData?.stIndexLevelName
             cell.backgroundColor = airQualityColor
             cell.addBorderBottom(size: 1, color: UIColor.white)
-            let background = UIView()
-            cell.layer.insertSublayer(background.makeGradient(frame: cell.bounds), at: 0)
+//            let background = UIView()
+//            cell.layer.insertSublayer(background.makeGradient(frame: cell.bounds), at: 0)
             
             return cell
         case 1:

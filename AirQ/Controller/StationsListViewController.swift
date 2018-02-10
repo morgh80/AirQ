@@ -23,7 +23,7 @@ class StationsListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        decoder.getStationsListWithDecoder(completion: {
+        decoder.getStationsListWithDecoder(completion: { [unowned self]
             stations in
             self.stationsList = stations!
             

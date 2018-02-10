@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		8E1D070220114828009CB2A1 /* AirQualityColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D070120114828009CB2A1 /* AirQualityColor.swift */; };
 		8E27BFF3200A3512008656C0 /* AirQualityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BFF2200A3512008656C0 /* AirQualityCell.swift */; };
+		8E51C906202F6DCB001C8F21 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51C905202F6DCB001C8F21 /* TabBarController.swift */; };
 		8E64A8152023B2E300DAA1C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8142023B2E300DAA1C6 /* MapViewController.swift */; };
-		8E64A8172023B48400DAA1C6 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */; };
+		8E64A8172023B48400DAA1C6 /* FavoriteStationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */; };
 		8E9923C5200C0A6700B1BDA7 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9923C4200C0A6700B1BDA7 /* MapCell.swift */; };
 		8E9923C7200C0E1300B1BDA7 /* SeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */; };
 		8E9E5E4A201520A5004A673E /* AirParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9E5E49201520A5004A673E /* AirParameters.swift */; };
@@ -37,8 +38,9 @@
 /* Begin PBXFileReference section */
 		8E1D070120114828009CB2A1 /* AirQualityColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AirQualityColor.swift; path = AirQ/Model/AirQualityColor.swift; sourceTree = SOURCE_ROOT; };
 		8E27BFF2200A3512008656C0 /* AirQualityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityCell.swift; sourceTree = "<group>"; };
+		8E51C905202F6DCB001C8F21 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8E64A8142023B2E300DAA1C6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStationsViewController.swift; sourceTree = "<group>"; };
 		8E9923C4200C0A6700B1BDA7 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
 		8E9E5E49201520A5004A673E /* AirParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirParameters.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				8EEA6943200AB35900B9A484 /* SO2ViewCell.swift */,
 				8E9923C4200C0A6700B1BDA7 /* MapCell.swift */,
 				8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */,
+				8E51C905202F6DCB001C8F21 /* TabBarController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,7 +132,7 @@
 		8EEA6940200A8DEA00B9A484 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8E64A8162023B48400DAA1C6 /* FavoritesViewController.swift */,
+				8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */,
 				8EF43DF220026E4A00000C37 /* StationsListViewController.swift */,
 				8EBA27A0200A766F0068646E /* AirQualityViewController.swift */,
 				8E64A8142023B2E300DAA1C6 /* MapViewController.swift */,
@@ -332,7 +335,8 @@
 				8E1D070220114828009CB2A1 /* AirQualityColor.swift in Sources */,
 				8EEA6944200AB35900B9A484 /* SO2ViewCell.swift in Sources */,
 				8EBA27A1200A766F0068646E /* AirQualityViewController.swift in Sources */,
-				8E64A8172023B48400DAA1C6 /* FavoritesViewController.swift in Sources */,
+				8E51C906202F6DCB001C8F21 /* TabBarController.swift in Sources */,
+				8E64A8172023B48400DAA1C6 /* FavoriteStationsViewController.swift in Sources */,
 				8EBE5D0C2003F72A002BCD86 /* StationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

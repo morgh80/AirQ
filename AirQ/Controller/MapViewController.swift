@@ -39,10 +39,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
-        spinner.activityIndicatorViewStyle = .whiteLarge
+        
+        
+        
+        spinner.activityIndicatorViewStyle = .gray
         self.spinner.startAnimating()
         
-        decoder.getStationsListWithDecoder(completion: {
+        decoder.getStationsListWithDecoder(completion: { [unowned self]
             stations in
             self.stationsList = stations!
             for station in self.stationsList {
@@ -51,7 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                         let annotation = AirQualityPointAnnotation()
                         annotation.coordinate = CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longtitude)!)
                         annotation.title = station.stationName
-                        self.decoder.getStationAirQualityData(stationId: station.stationId!, completion: {
+                        self.decoder.getStationAirQualityData(stationId: station.stationId!, completion: { [unowned self]
                             data in
                             if let data = data {
                                 annotation.color = self.colorPicker.calculateColorFor(parameter: AirParameters.airQuality ,with: data)
@@ -85,8 +88,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             annotationView?.markerTintColor = annotation.color
             annotationView?.glyphText = ""
             annotationView?.animatesWhenAdded = true
-            annotationView?.canShowCallout = true
-            annotationView?.rightCalloutAccessoryView = UIButton(type: .infoDark)
+//            annotationView?.canShowCallout = true
+//            annotationView?.rightCalloutAccessoryView = UIButton(type: .infoDark)
             annotationView?.stationId = annotation.stationId
             annotationView?.station = annotation.station
         }
