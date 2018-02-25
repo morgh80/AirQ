@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class AirQualityViewController: UITableViewController {
     
@@ -35,6 +36,36 @@ class AirQualityViewController: UITableViewController {
     
     var location: CLLocation?
     
+    @IBAction func addToFavorites(_ sender: Any) {
+        if let appDelegate = (UIApplication.shared.delegate) as? AppDelegate {
+        let favoriteStation = StationMO(context: appDelegate.persistentContainer.viewContext)
+            favoriteStation.id = Int32(stationId!)
+            favoriteStation.name = station.cityName
+            appDelegate.saveContext()
+           performSegue(withIdentifier: "goBackToFavorites", sender: nil)
+            dismiss(animated: true, completion: nil)
+
+        }
+    }
+
+    
+    /*
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     if segue.identifier == "showAddFavoriteLocation" {
+     //            let navController = segue.destination as! UINavigationController
+     let destinationController = segue.destination as! StationsListViewController
+     //            destinationController.stationsList
+     }
+     }
+ */
+    
+//    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "goBackToFavorites" {
+//            let destination = segue.destination as! FavoriteStationsViewController
+//        }
+//    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
@@ -43,6 +74,9 @@ class AirQualityViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         self.title = station.cityName
+        
+        self.navigationController?.navigationBar.isHidden = false
+
         
         decoder.getStationAirQualityData(stationId: stationId!, completion: { [unowned self]
             data in

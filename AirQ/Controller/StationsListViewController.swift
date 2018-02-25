@@ -12,25 +12,23 @@ class StationsListViewController: UIViewController, UITableViewDelegate, UITable
     
     let decoder = DecoderUtils()
     var stationsList = [StationModel]()
-    
+        
     let searchController = UISearchController(searchResultsController: nil)
-    
     var filteredStations = [StationModel]()
-    
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        decoder.getStationsListWithDecoder(completion: { [unowned self]
+        
+        decoder.getStationsList(completion: { [unowned self]
             stations in
             self.stationsList = stations!
             
             self.stationsList = self.stationsList
                 .filter { $0.cityName != nil }
                 .sorted { $0.cityName! < $1.cityName! }
-
+            
             self.tableView.reloadData()
         })
         
@@ -39,14 +37,12 @@ class StationsListViewController: UIViewController, UITableViewDelegate, UITable
         searchController.searchBar.placeholder = "Search Cities"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
             return filteredStations.count
         }
-        
         return stationsList.count
     }
     

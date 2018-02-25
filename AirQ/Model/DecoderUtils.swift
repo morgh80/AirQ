@@ -10,7 +10,7 @@ import Foundation
 
 class DecoderUtils {
     
-    public func getStationsListWithDecoder(completion: @escaping ([StationModel]?) -> Void) {
+    public func getStationsList(completion: @escaping ([StationModel]?) -> Void) {
         let allStationsUrl = URL(string: "http://api.gios.gov.pl/pjp-api/rest/station/findAll")
         let task = URLSession.shared.dataTask(with: allStationsUrl!)  { (data, response, error) in
             let jsonDecoder = JSONDecoder()
@@ -27,6 +27,9 @@ class DecoderUtils {
         }
         task.resume()
     }
+    
+    
+    
     
     public func getStationAirQualityData(stationId: Int, completion: @escaping (AirQualityModel?) -> Void) {
         let allStationsUrl = URL(string: "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/\(stationId)")

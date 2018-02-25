@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		8E1D070220114828009CB2A1 /* AirQualityColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D070120114828009CB2A1 /* AirQualityColor.swift */; };
 		8E27BFF3200A3512008656C0 /* AirQualityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BFF2200A3512008656C0 /* AirQualityCell.swift */; };
+		8E4E4A912041E320001EBB70 /* FavoriteStationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E4A902041E320001EBB70 /* FavoriteStationCell.swift */; };
 		8E51C906202F6DCB001C8F21 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51C905202F6DCB001C8F21 /* TabBarController.swift */; };
 		8E64A8152023B2E300DAA1C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8142023B2E300DAA1C6 /* MapViewController.swift */; };
 		8E64A8172023B48400DAA1C6 /* FavoriteStationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */; };
+		8E909D5F2030DCA30058CD06 /* AddFavoriteStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E909D5E2030DCA30058CD06 /* AddFavoriteStationViewController.swift */; };
+		8E94DF762041AA72007D195B /* Station.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E94DF742041AA72007D195B /* Station.xcdatamodeld */; };
 		8E9923C5200C0A6700B1BDA7 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9923C4200C0A6700B1BDA7 /* MapCell.swift */; };
 		8E9923C7200C0E1300B1BDA7 /* SeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */; };
 		8E9E5E4A201520A5004A673E /* AirParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9E5E49201520A5004A673E /* AirParameters.swift */; };
@@ -38,9 +41,12 @@
 /* Begin PBXFileReference section */
 		8E1D070120114828009CB2A1 /* AirQualityColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AirQualityColor.swift; path = AirQ/Model/AirQualityColor.swift; sourceTree = SOURCE_ROOT; };
 		8E27BFF2200A3512008656C0 /* AirQualityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityCell.swift; sourceTree = "<group>"; };
+		8E4E4A902041E320001EBB70 /* FavoriteStationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStationCell.swift; sourceTree = "<group>"; };
 		8E51C905202F6DCB001C8F21 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8E64A8142023B2E300DAA1C6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStationsViewController.swift; sourceTree = "<group>"; };
+		8E909D5E2030DCA30058CD06 /* AddFavoriteStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteStationViewController.swift; sourceTree = "<group>"; };
+		8E94DF752041AA72007D195B /* Station.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Station.xcdatamodel; sourceTree = "<group>"; };
 		8E9923C4200C0A6700B1BDA7 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
 		8E9E5E49201520A5004A673E /* AirParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirParameters.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				8E9923C4200C0A6700B1BDA7 /* MapCell.swift */,
 				8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */,
 				8E51C905202F6DCB001C8F21 /* TabBarController.swift */,
+				8E4E4A902041E320001EBB70 /* FavoriteStationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,10 +139,11 @@
 		8EEA6940200A8DEA00B9A484 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */,
 				8EF43DF220026E4A00000C37 /* StationsListViewController.swift */,
-				8EBA27A0200A766F0068646E /* AirQualityViewController.swift */,
+				8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */,
+				8E909D5E2030DCA30058CD06 /* AddFavoriteStationViewController.swift */,
 				8E64A8142023B2E300DAA1C6 /* MapViewController.swift */,
+				8EBA27A0200A766F0068646E /* AirQualityViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 				8EEA693F200A8DC300B9A484 /* View */,
 				8EEA6940200A8DEA00B9A484 /* Controller */,
 				8EF43DF020026E4A00000C37 /* AppDelegate.swift */,
+				8E94DF742041AA72007D195B /* Station.xcdatamodeld */,
 				8EF43DF720026E4A00000C37 /* Assets.xcassets */,
 				8EF43DF920026E4A00000C37 /* LaunchScreen.storyboard */,
 				8EF43DFC20026E4A00000C37 /* Info.plist */,
@@ -325,8 +334,11 @@
 				8EBE5D0E20041B18002BCD86 /* SensorsListModel.swift in Sources */,
 				8EBA27A3200A87C90068646E /* PM10ViewCell.swift in Sources */,
 				8E64A8152023B2E300DAA1C6 /* MapViewController.swift in Sources */,
+				8E94DF762041AA72007D195B /* Station.xcdatamodeld in Sources */,
 				8E9923C5200C0A6700B1BDA7 /* MapCell.swift in Sources */,
+				8E4E4A912041E320001EBB70 /* FavoriteStationCell.swift in Sources */,
 				8EB2A3E020054613001BEEF6 /* DecoderUtils.swift in Sources */,
+				8E909D5F2030DCA30058CD06 /* AddFavoriteStationViewController.swift in Sources */,
 				8EEA693E200A8A3F00B9A484 /* PM25ViewCell.swift in Sources */,
 				8EDC0475200825C700071E74 /* StationsListViewCell.swift in Sources */,
 				8EBE5D102004209A002BCD86 /* SensorDataModel.swift in Sources */,
@@ -526,6 +538,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8E94DF742041AA72007D195B /* Station.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E94DF752041AA72007D195B /* Station.xcdatamodel */,
+			);
+			currentVersion = 8E94DF752041AA72007D195B /* Station.xcdatamodel */;
+			path = Station.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8EF43DE520026E4A00000C37 /* Project object */;
 }

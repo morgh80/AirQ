@@ -39,13 +39,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
-        
-        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(blurEffectView)
+        blurEffectView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        blurEffectView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        blurEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        blurEffectView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         
         spinner.activityIndicatorViewStyle = .gray
         self.spinner.startAnimating()
         
-        decoder.getStationsListWithDecoder(completion: { [unowned self]
+        decoder.getStationsList(completion: { [unowned self]
             stations in
             self.stationsList = stations!
             for station in self.stationsList {
@@ -72,6 +78,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         })
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.isHidden = true
+
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?     {
