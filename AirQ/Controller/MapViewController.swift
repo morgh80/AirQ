@@ -15,6 +15,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var zoomButton: UIButton!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     let decoder = DecoderUtils()
     let colorPicker = AirQualityColor()
     let locationManager = CLLocationManager()

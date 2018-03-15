@@ -38,16 +38,30 @@ class AirQualityViewController: UITableViewController {
     
     @IBAction func addToFavorites(_ sender: Any) {
         if let appDelegate = (UIApplication.shared.delegate) as? AppDelegate {
-        let favoriteStation = StationMO(context: appDelegate.persistentContainer.viewContext)
+        
+            let favoriteStation = StationMO(context: appDelegate.persistentContainer.viewContext)
+            
             favoriteStation.id = Int32(stationId!)
-            favoriteStation.name = station.cityName
+            favoriteStation.name = station.stationName
             appDelegate.saveContext()
-           performSegue(withIdentifier: "goBackToFavorites", sender: nil)
+            performSegue(withIdentifier: "goBackToFavorites", sender: nil)
             dismiss(animated: true, completion: nil)
-
+            }
         }
-    }
-
+    
+    /*
+     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+     let request: NSFetchRequest<StationMO> = NSFetchRequest(entityName: "Station")
+     
+     let context = appDelegate.persistentContainer.viewContext
+     do {
+     StationMO = try context.fetch(request)
+     } catch {
+     print(error)
+     }
+     }
+ */
+    
     
     /*
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,13 +71,13 @@ class AirQualityViewController: UITableViewController {
      //            destinationController.stationsList
      }
      }
- */
+     */
     
-//    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "goBackToFavorites" {
-//            let destination = segue.destination as! FavoriteStationsViewController
-//        }
-//    }
+    //    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        if segue.identifier == "goBackToFavorites" {
+    //            let destination = segue.destination as! FavoriteStationsViewController
+    //        }
+    //    }
     
     
     override func viewDidLoad() {
@@ -76,7 +90,7 @@ class AirQualityViewController: UITableViewController {
         self.title = station.cityName
         
         self.navigationController?.navigationBar.isHidden = false
-
+        
         
         decoder.getStationAirQualityData(stationId: stationId!, completion: { [unowned self]
             data in
@@ -182,8 +196,8 @@ class AirQualityViewController: UITableViewController {
             cell.airQualityLabel.text = airQualityData?.stIndexLevelName
             cell.backgroundColor = airQualityColor
             cell.addBorderBottom(size: 1, color: UIColor.white)
-//            let background = UIView()
-//            cell.layer.insertSublayer(background.makeGradient(frame: cell.bounds), at: 0)
+            //            let background = UIView()
+            //            cell.layer.insertSublayer(background.makeGradient(frame: cell.bounds), at: 0)
             
             return cell
         case 1:
@@ -316,5 +330,5 @@ extension UIView {
             UIColor.clear.cgColor, UIColor.white.cgColor]
         layer.opacity = 0.1
         return layer
-}
+    }
 }

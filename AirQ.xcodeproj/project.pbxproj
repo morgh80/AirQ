@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		8E1D070220114828009CB2A1 /* AirQualityColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D070120114828009CB2A1 /* AirQualityColor.swift */; };
 		8E27BFF3200A3512008656C0 /* AirQualityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27BFF2200A3512008656C0 /* AirQualityCell.swift */; };
+		8E27F5232053DFA3002BBFDB /* AddFavoriteStationCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27F5222053DFA3002BBFDB /* AddFavoriteStationCellTableViewCell.swift */; };
 		8E4E4A912041E320001EBB70 /* FavoriteStationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E4A902041E320001EBB70 /* FavoriteStationCell.swift */; };
 		8E51C906202F6DCB001C8F21 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E51C905202F6DCB001C8F21 /* TabBarController.swift */; };
+		8E57F43A2053D7920007F3DC /* AddFavoriteStationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57F4392053D7920007F3DC /* AddFavoriteStationButton.swift */; };
 		8E64A8152023B2E300DAA1C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8142023B2E300DAA1C6 /* MapViewController.swift */; };
 		8E64A8172023B48400DAA1C6 /* FavoriteStationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */; };
 		8E909D5F2030DCA30058CD06 /* AddFavoriteStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E909D5E2030DCA30058CD06 /* AddFavoriteStationViewController.swift */; };
@@ -41,8 +43,10 @@
 /* Begin PBXFileReference section */
 		8E1D070120114828009CB2A1 /* AirQualityColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AirQualityColor.swift; path = AirQ/Model/AirQualityColor.swift; sourceTree = SOURCE_ROOT; };
 		8E27BFF2200A3512008656C0 /* AirQualityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityCell.swift; sourceTree = "<group>"; };
+		8E27F5222053DFA3002BBFDB /* AddFavoriteStationCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteStationCellTableViewCell.swift; sourceTree = "<group>"; };
 		8E4E4A902041E320001EBB70 /* FavoriteStationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStationCell.swift; sourceTree = "<group>"; };
 		8E51C905202F6DCB001C8F21 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8E57F4392053D7920007F3DC /* AddFavoriteStationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteStationButton.swift; sourceTree = "<group>"; };
 		8E64A8142023B2E300DAA1C6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStationsViewController.swift; sourceTree = "<group>"; };
 		8E909D5E2030DCA30058CD06 /* AddFavoriteStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteStationViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +134,9 @@
 				8EEA6943200AB35900B9A484 /* SO2ViewCell.swift */,
 				8E9923C4200C0A6700B1BDA7 /* MapCell.swift */,
 				8E9923C6200C0E1300B1BDA7 /* SeparatorCell.swift */,
-				8E51C905202F6DCB001C8F21 /* TabBarController.swift */,
 				8E4E4A902041E320001EBB70 /* FavoriteStationCell.swift */,
+				8E57F4392053D7920007F3DC /* AddFavoriteStationButton.swift */,
+				8E27F5222053DFA3002BBFDB /* AddFavoriteStationCellTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 		8EEA6940200A8DEA00B9A484 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8E51C905202F6DCB001C8F21 /* TabBarController.swift */,
 				8EF43DF220026E4A00000C37 /* StationsListViewController.swift */,
 				8E64A8162023B48400DAA1C6 /* FavoriteStationsViewController.swift */,
 				8E909D5E2030DCA30058CD06 /* AddFavoriteStationViewController.swift */,
@@ -338,7 +344,9 @@
 				8E9923C5200C0A6700B1BDA7 /* MapCell.swift in Sources */,
 				8E4E4A912041E320001EBB70 /* FavoriteStationCell.swift in Sources */,
 				8EB2A3E020054613001BEEF6 /* DecoderUtils.swift in Sources */,
+				8E57F43A2053D7920007F3DC /* AddFavoriteStationButton.swift in Sources */,
 				8E909D5F2030DCA30058CD06 /* AddFavoriteStationViewController.swift in Sources */,
+				8E27F5232053DFA3002BBFDB /* AddFavoriteStationCellTableViewCell.swift in Sources */,
 				8EEA693E200A8A3F00B9A484 /* PM25ViewCell.swift in Sources */,
 				8EDC0475200825C700071E74 /* StationsListViewCell.swift in Sources */,
 				8EBE5D102004209A002BCD86 /* SensorDataModel.swift in Sources */,

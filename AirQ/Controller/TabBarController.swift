@@ -12,6 +12,7 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
 //        self.tabBar.unselectedItemTintColor = UIColor(red: 17.0/255.0, green: 70.0/255.0, blue: 95.0/255.0, alpha: 0.4)
 //        self.tabBar.backgroundColor = UIColor(red: 17.0/255.0, green: 70.0/255.0, blue: 95.0/255.0, alpha: 0.5)
         // Do any additional setup after loading the view.
@@ -21,8 +22,8 @@ class TabBarController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       UITabBar.appearance().layer.borderWidth = 0.0
-        UITabBar.appearance().clipsToBounds = true
+//       UITabBar.appearance().layer.borderWidth = 0.0
+//        UITabBar.appearance().clipsToBounds = true
 //        self.tabBar.barTintColor = UIColor.clear
 //
 //        self.tabBar.backgroundImage = UIImage()
